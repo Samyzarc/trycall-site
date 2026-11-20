@@ -1,0 +1,5 @@
+<!-- TODO: remplacer par le vrai favicon TryCall le cas échéant -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#ff6a1a"/>
+  <path d="M18 22h28M32 22v22" stroke="#f4f4f2" stroke-width="6" stroke-linecap="round"/>
+</svg>
