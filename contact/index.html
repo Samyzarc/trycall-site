@@ -85,17 +85,44 @@
             <p class="x-eyebrow" data-reveal>[ Message initial ]</p>
             <h2>Décrivez votre dispositif</h2>
             <p class="x-contact-form-intro">Indiquez le type d’appels concernés, vos contraintes et les équipes impliquées. Ce message ouvre une prise de contact&nbsp;; il ne confirme pas de réservation.</p>
-            <!-- Le formulaire d'origine est remplacé par un appel par courriel (RGPD : aucune donnée collectée par le site) -->
-            <div class="x-contact-cta-block">
-              <p class="x-eyebrow">[ Présentez votre besoin ]</p>
-              <h3>Écrivez-nous directement</h3>
-              <p>Votre message est une demande de prise de contact&nbsp;; nous y répondrons par e-mail. Décrivez votre organisation, les appels à confier et vos contraintes&nbsp;: nous construirons le périmètre ensemble.</p>
-              <a class="ids-design-btn ids-design-btn--primary" href="mailto:contact@trycall.com?subject=Demande%20de%20devis%20-%20TryCall">
+            <!-- Formulaire — prépare un e-mail via votre logiciel de messagerie (aucune donnée envoyée par le site) -->
+            <form class="x-contact-page-form" data-reveal aria-label="Décrivez votre dispositif">
+              <div class="x-fields">
+                <div class="x-field">
+                  <label for="ids-form-name">Nom</label>
+                  <input id="ids-form-name" name="name" type="text" required autocomplete="name">
+                </div>
+                <div class="x-field">
+                  <label for="ids-form-email">E-mail professionnel</label>
+                  <input id="ids-form-email" name="email" type="email" required autocomplete="email">
+                </div>
+                <div class="x-field">
+                  <label for="ids-form-entreprise">Entreprise</label>
+                  <input id="ids-form-entreprise" name="entreprise" type="text" required autocomplete="organization">
+                </div>
+                <div class="x-field">
+                  <label for="ids-form-mission">Mission envisagée</label>
+                  <select id="ids-form-mission" name="mission">
+                    <option value="" disabled hidden selected>Choisir une mission</option>
+                    <option value="Accueil téléphonique">Accueil téléphonique</option>
+                    <option value="Service client externalisé">Service client externalisé</option>
+                    <option value="Prise de rendez-vous B2B">Prise de rendez-vous B2B</option>
+                    <option value="Rappel de prospects">Rappel de prospects</option>
+                    <option value="Plusieurs missions">Plusieurs missions</option>
+                  </select>
+                </div>
+                <div class="x-field x-full">
+                  <label for="ids-form-message">Votre périmètre d’appels</label>
+                  <textarea id="ids-form-message" name="message" required placeholder="Demandes à traiter, consignes importantes, circuits de transfert…" rows="4"></textarea>
+                </div>
+              </div>
+              <p class="x-form-note">Ne transmettez pas de données personnelles de vos clients dans ce premier message.</p>
+              <button class="ids-design-btn ids-design-btn--primary" type="submit">
                 <span class="ids-design-btn__label">Demander un devis</span>
                 <svg class="ids-design-btn__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" width="24" height="24"><path fill="currentColor" d="M15.943 4.463a.8.8 0 0 0-.161-.242l-.002-.001-.001-.002A.75.75 0 0 0 15.25 4H9.24a.75.75 0 0 0 0 1.5h4.2l-9.22 9.22a.75.75 0 1 0 1.06 1.06l9.22-9.22v4.2a.75.75 0 0 0 1.5 0V4.75a.8.8 0 0 0-.057-.287"></path></svg>
-              </a>
-              <p class="x-form-note">Ne transmettez pas de données personnelles de vos clients dans ce premier message.</p>
-            </div>
+              </button>
+              <p class="x-form-status" hidden>Votre logiciel de messagerie s’ouvre avec la demande préremplie. Si rien ne s’affiche, écrivez directement à <a href="mailto:contact@trycall.com">contact@trycall.com</a>.</p>
+            </form>
           </div>
         </div>
       </div>

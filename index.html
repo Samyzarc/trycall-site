@@ -310,6 +310,36 @@
             <a href="mailto:contact@trycall.com">contact@trycall.com</a>
           </div>
         </div>
+        <!-- Formulaire « Présentez votre besoin » — prépare un e-mail via votre logiciel de messagerie (aucune donnée envoyée par le site) -->
+        <form class="x-contact-form" data-reveal aria-label="Présentez votre besoin">
+          <span class="x-eyebrow">[ Message initial ]</span>
+          <h3>Présentez votre besoin</h3>
+          <p>Votre message est une demande de prise de contact, pas une réservation confirmée.</p>
+          <div class="x-fields">
+            <div class="x-field">
+              <label for="ids-form-name">Nom</label>
+              <input id="ids-form-name" name="name" type="text" required autocomplete="name">
+            </div>
+            <div class="x-field">
+              <label for="ids-form-email">E-mail professionnel</label>
+              <input id="ids-form-email" name="email" type="email" required autocomplete="email">
+            </div>
+            <div class="x-field x-full">
+              <label for="ids-form-entreprise">Entreprise</label>
+              <input id="ids-form-entreprise" name="entreprise" type="text" autocomplete="organization">
+            </div>
+            <div class="x-field x-full">
+              <label for="ids-form-message">Votre périmètre d’appels</label>
+              <textarea id="ids-form-message" name="message" placeholder="Accueil, service client, rendez-vous B2B ou rappels…" rows="4"></textarea>
+            </div>
+          </div>
+          <p class="x-form-note">Ne transmettez pas de données personnelles de vos clients dans ce premier message.</p>
+          <button class="ids-design-btn ids-design-btn--primary" type="submit">
+            <span class="ids-design-btn__label">Demander un devis</span>
+            <svg class="ids-design-btn__icon" aria-hidden="true" viewBox="0 0 20 20" fill="none" width="24" height="24"><path fill="currentColor" d="M15.943 4.463a.8.8 0 0 0-.161-.242l-.002-.001-.001-.002A.75.75 0 0 0 15.25 4H9.24a.75.75 0 0 0 0 1.5h4.2l-9.22 9.22a.75.75 0 1 0 1.06 1.06l9.22-9.22v4.2a.75.75 0 0 0 1.5 0V4.75a.8.8 0 0 0-.057-.287"></path></svg>
+          </button>
+          <p class="x-form-status" hidden>Votre logiciel de messagerie s’ouvre avec la demande préremplie. Si rien ne s’affiche, écrivez directement à <a href="mailto:contact@trycall.com">contact@trycall.com</a>.</p>
+        </form>
       </div>
     </section>
   </div>

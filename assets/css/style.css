@@ -47,10 +47,11 @@ body{
   -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
   text-rendering:optimizeLegibility;overflow-x:clip;
 }
-img{display:block;width:100%;object-fit:cover}
+img{display:block;width:100%;height:auto;object-fit:cover}
 a{color:inherit;text-decoration:none}
 a:focus-visible,button:focus-visible,summary:focus-visible,[role=tab]:focus-visible{outline:2px solid var(--x-color-accent);outline-offset:4px}
 h1,h2,h3,p{margin:0}
+figure{margin:0}
 h1,h2,h3{font-family:var(--x-font-display);font-weight:500;text-wrap:balance;line-height:1.04}
 p{max-width:64ch}
 ul,ol{margin-block:1em}
@@ -220,15 +221,15 @@ footer{background:var(--x-color-ground);border-top:1px solid var(--x-color-line)
 .x-voices{padding:112px 0 128px;background:var(--ids-color-on-accent)}
 .x-voices .x-section-head{align-items:end}
 .x-voices-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;align-items:start}
-.x-quote{position:relative;padding:35px 32px 42px;background:var(--ids-color-surface);min-height:290px;clip-path:polygon(0 0,100% 0,100% 88%,85% 88%,77% 100%,73% 88%,0 88%);transition:translate .35s,background .35s}
+.x-quote{position:relative;margin:0;padding:35px 32px 42px;background:var(--ids-color-surface);min-height:290px;clip-path:polygon(0 0,100% 0,100% 88%,85% 88%,77% 100%,73% 88%,0 88%);transition:translate .35s,background .35s}
 .x-quote:nth-child(1){rotate:-2deg}
 .x-quote:nth-child(2){rotate:2deg;margin-top:45px;background:color-mix(in oklab,var(--ids-color-surface) 61.3%,var(--ids-color-line))}
 .x-quote:nth-child(3){rotate:-1deg;margin-top:15px}
 .x-quote:hover{translate:0 -6px;background:var(--ids-color-tint-1)}
-.x-quote blockquote{margin:22px 0;font-family:var(--x-font-display);font-size:max(12px,clamp(20px,2vw,29px));line-height:1.23;letter-spacing:-.025em;font-weight:500}
+.x-quote blockquote{margin:22px 0;font-family:var(--x-font-display);font-size:max(12px,clamp(20px,2vw,29px));line-height:1.23;letter-spacing:-.025em;font-weight:400}
 .x-quote figcaption{font-size:13px;color:var(--ids-color-tint-2)}
 .x-voices-foot{display:flex;align-items:center;justify-content:space-between;gap:40px;margin-top:75px;padding-top:22px;border-top:1px solid var(--x-color-line)}
-.x-voices-foot img{width:180px;aspect-ratio:3/2;filter:brightness(.8)}
+.x-voices-foot img{width:180px;height:auto;aspect-ratio:3/2;object-fit:cover;filter:brightness(.8)}
 
 /* ---------- [04] FAQ (onglets, section claire) ---------- */
 .x-faq{padding:112px 0 128px;background:color-mix(in oklab,var(--ids-color-ink) 56.1%,var(--ids-color-tint-2));color:color-mix(in oklab,var(--ids-color-ground) 35.6%,var(--ids-color-surface))}
@@ -257,6 +258,23 @@ footer{background:var(--x-color-ground);border-top:1px solid var(--x-color-line)
 .x-contact-line{border-top:1px solid var(--x-color-line);margin-top:55px;padding-top:20px;display:flex;justify-content:space-between;gap:20px}
 .x-contact-line a{white-space:nowrap;font-size:20px;font-family:var(--x-font-display)}
 .x-contact-line a:hover{color:var(--x-color-accent)}
+
+/* ---------- Formulaire « Présentez votre besoin » (carte de droite) ---------- */
+.x-contact-form,.x-contact-page-form{padding:32px;border:1px solid color-mix(in oklab,var(--ids-color-surface) 43.6%,var(--ids-color-ink-muted));background:color-mix(in oklab,var(--ids-color-ground) 25.1%,var(--ids-color-surface))}
+.x-contact-form h3{font-size:30px;margin-bottom:12px}
+.x-contact-form>p{color:var(--ids-color-tint-2);font-size:14px;margin-bottom:26px;max-width:none}
+.x-fields{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.x-field{display:grid;gap:7px;margin-bottom:18px}
+.x-field.x-full{grid-column:1/-1}
+.x-field label{font-size:12px;letter-spacing:.1em;text-transform:uppercase}
+.x-field input,.x-field textarea,.x-field select{width:100%;border:1px solid color-mix(in oklab,var(--ids-color-ink-muted) 66.8%,var(--ids-color-tint-1));background:color-mix(in oklab,var(--ids-color-ground) 57.1%,var(--ids-color-surface));color:var(--x-color-ink);padding:13px;min-height:48px;border-radius:0;font:inherit}
+.x-field textarea{min-height:105px;resize:vertical}
+.x-field input:focus-visible,.x-field textarea:focus-visible,.x-field select:focus-visible{outline:2px solid var(--x-color-accent);outline-offset:2px}
+.x-contact-form .ids-design-btn{margin-top:6px}
+.x-contact-page-form .x-form-note{max-width:58ch}
+.x-form-note{font-size:12px;color:var(--ids-color-tint-2);margin-top:15px;max-width:none}
+.x-form-status{font-size:13px;color:var(--ids-color-tint-2);margin-top:14px;max-width:none}
+.x-form-status a{color:var(--x-color-accent)}
 
 /* ==========================================================================
    PAGE SERVICES
@@ -289,7 +307,7 @@ footer{background:var(--x-color-ground);border-top:1px solid var(--x-color-line)
 .x-services-specs dd{margin:0}
 .x-services-feature-media{display:grid;grid-template-columns:1fr .48fr;align-items:end;gap:14px}
 .x-services-feature-media figure{overflow:hidden;position:relative;margin:0}
-.x-services-feature-media img{filter:brightness(.82);transition:scale .45s}
+.x-services-feature-media img{aspect-ratio:4/5;filter:brightness(.82);transition:scale .45s}
 .x-services-feature-media figure:hover img{scale:1.05}
 .x-services-feature-media figcaption{position:absolute;bottom:0;left:0;background:color-mix(in srgb,var(--ids-color-ground) 91%,transparent);padding:9px 12px;color:var(--x-color-ink)}
 .x-services-horizon{height:2px;background:linear-gradient(90deg,transparent,var(--x-color-accent),transparent)}
@@ -558,6 +576,9 @@ footer{background:var(--x-color-ground);border-top:1px solid var(--x-color-line)
   .x-faq [role=tab]{flex:0 0 72%;scroll-snap-align:start;border-right:1px solid color-mix(in oklab,var(--ids-color-ink) 51.4%,var(--ids-color-tint-1))}
   .x-faq [role=tabpanel]{min-height:245px}
   .x-contact-grid{grid-template-columns:minmax(0,1fr);gap:45px}
+  .x-fields{grid-template-columns:1fr}
+  .x-contact-form,.x-contact-page-form{padding:22px}
+  .x-contact-form h3{font-size:26px}
   .x-contact-line{display:grid}
   .x-footer-grid{grid-template-columns:minmax(0,1fr);gap:36px}
   .x-footer-bottom{display:grid;gap:10px}

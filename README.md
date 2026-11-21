@@ -122,7 +122,10 @@ emplacement exacts.
 
 ## Choix RGPD appliqués
 
-- aucun formulaire, aucun cookie, aucun traceur, aucune mesure d'audience ;
+- aucun cookie, aucun traceur, aucune mesure d'audience ;
+- formulaire « Présentez votre besoin » (accueil + page Contact) purement statique :
+  la soumission ouvre le logiciel de messagerie du visiteur avec un e-mail
+  prérempli (`mailto:`) — aucune donnée ne transite par le site ;
 - unique donnée traitée : l'adresse e-mail envoyée volontairement via les liens
   `mailto:` (base légale : mesures précontractuelles, art. 6-1-b RGPD) ;
 - quatre pages légales liées dans le pied de page de chaque page ;

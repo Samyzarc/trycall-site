@@ -271,4 +271,40 @@
       }
     });
   });
+
+  /* ------------------------------------------------------------------
+     9. Formulaire « Demander un devis »
+        Site statique sans serveur : la soumission prépare un e-mail
+        (mailto) prérempli dans le logiciel de messagerie du visiteur.
+        Aucune donnée ne transite par le site (conformité RGPD / charte
+        cookies : zéro requête, zéro stockage).
+  ------------------------------------------------------------------ */
+  document.querySelectorAll('form.x-contact-form, form.x-contact-page-form').forEach(function (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.reportValidity()) return;
+
+      var val = function (name) {
+        var el = form.elements[name];
+        return el && el.value ? el.value.trim() : '';
+      };
+
+      var lines = [];
+      if (val('name')) lines.push('Nom : ' + val('name'));
+      if (val('email')) lines.push('E-mail professionnel : ' + val('email'));
+      if (val('entreprise')) lines.push('Entreprise : ' + val('entreprise'));
+      if (val('mission')) lines.push('Mission envisagée : ' + val('mission'));
+      if (val('message')) lines.push('\nVotre périmètre d\'appels :\n' + val('message'));
+      lines.push('\n— Envoyé depuis le site TryCall');
+
+      var href = 'mailto:contact@trycall.com'
+        + '?subject=' + encodeURIComponent('Demande de devis - TryCall')
+        + '&body=' + encodeURIComponent(lines.join('\n'));
+
+      window.location.href = href;
+
+      var status = form.querySelector('.x-form-status');
+      if (status) status.hidden = false;
+    });
+  });
 })();
